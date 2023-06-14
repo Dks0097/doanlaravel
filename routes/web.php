@@ -109,8 +109,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('1', function () {
         return view('admin.index');
     })->name('lienhe');
+    Route::get('index', [PageController::class, 'IndexAdmin'])->name('admin.index');
+
 });
-Route::get('index', [PageController::class, 'IndexAdmin']
-    
-)->name('index');
 

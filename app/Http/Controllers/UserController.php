@@ -87,7 +87,7 @@ class UserController extends Controller
         );
         $credentials=array('email'=>$request->email,'password'=>$request->password);
         if(Auth::attempt($credentials)){
-            return redirect('/admin/category/danhsach')->with(['flag'=>'success ','thongbao'=>'Đăng nhập thành công']);
+            return redirect()->route('admin.index')->with(['flag'=>'success ','thongbao'=>'Đăng nhập thành công']);
         }
         else{
             return redirect()->back()->with(['flag'=>'danger','thongbao'=>'Đăng nhập không thành công! sai mật khẩu hoặc tài khoản']);

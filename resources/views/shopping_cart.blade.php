@@ -79,8 +79,12 @@
 
                         <td class="product-quantity">
                            <div class="product-qty">
-                                <input data-id="{{$product['item']->id}}" id="quanty-item-{{$product['item']->id}}" type="text" value="{{$product['qty']}}">
-                           </div>
+                            
+                                
+                               
+                                <input data-id="{{$product['item']->id}}" id="quanty-item-{{$product['item']->id}}" type="text" value="{{$product['qty']}}" style="text-align: center">
+                             
+                            </div>
                         </td>
                         <td>
                             {{-- <a href="{{route('banhang.update',$product['item']->id,4)}}">save</a> --}}
@@ -231,7 +235,10 @@
         }).done(function(response){
             // RenderListCart(response);
             alertify.success('đã cập nhật thành công');
-            location.reload();
+            setTimeout(() => {
+                location.reload();
+            }, 150);
+            
         });
 
     }
@@ -243,7 +250,9 @@
        }).done(function(response){
         //    RenderListCart(response);
            alertify.success('đã xóa thành công');
-           location.reload();
+           setTimeout(() => {
+                location.reload();
+            }, 150);
        });
 
    }
@@ -272,7 +281,9 @@
            
             // RenderListCart(response);
             alertify.success('đã cập nhật thành công');
-            location.reload();
+            setTimeout(() => {
+                location.reload();
+            }, 200);
         });
  });
 
