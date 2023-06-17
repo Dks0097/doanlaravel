@@ -50,7 +50,7 @@
                     </tr>
                 </thead>
                 <tbody >
-
+                    @if (Session::has('cart'))
                     @isset($productCarts)
                                 
                            
@@ -104,6 +104,9 @@
                     </tr>
                     @endforeach
                     @endisset
+                    @else
+                    <h3 style="color: red">Giỏ hàng của bạn trống</h3>
+                    @endif
                    
                 </tbody>
 
@@ -237,7 +240,7 @@
             alertify.success('đã cập nhật thành công');
             setTimeout(() => {
                 location.reload();
-            }, 150);
+            }, 170);
             
         });
 

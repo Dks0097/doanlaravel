@@ -15,7 +15,7 @@
     <div class="container-fluid px-4">
         <h1 class="mt-4">Sản phẩm</h1>
         <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item"><a href="{{route('admin.getCateList')}}">Admin</a></li>
+            <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Admin</a></li>
             <li class="breadcrumb-item active">sản phẩm</li>
         </ol>
         <div class="card mb-4">
@@ -74,7 +74,7 @@
                             <td>{{$item->unit_price }}</td>
                             <td>{{$item->promotion_price !=0?$item->promotion_price:'không sale' }}</td>
                            
-                            <td><img src="/source/image/product/{{$item->image }}" alt="{{$item->image }}" height="150" ></td>
+                            <td><img src="/source/image/product/{{$item->image }}" alt="{{$item->image }}" height="150"  width="200"></td>
                             <td><a href="{{route('admin.getProductEdit',['id'=> $item->id ])}}" class="btn btn-success"><i class="fas fa-edit"></i></a></td>
                             <td><form action="{{route('admin.getProductDelete',['id'=> $item->id ])}}" onclick="return confirm('bạn có muốn xóa {{$item->name}}');" method="post">
                      

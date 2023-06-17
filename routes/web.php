@@ -58,7 +58,7 @@ Route::post('/admin/dangnhap',[UserController::class,'postLogin'])->name('admin.
 Route::get('/admin/dangxuat',[UserController::class,'getLogout'])->name('admin.getLogout');
 
 
-Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
+Route::group(['prefix' => 'admin', 'middleware' => 'adminLogin'], function () {
     Route::group(['prefix' => 'category'], function () {
         // admin/category/danhsach
 
@@ -106,10 +106,13 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         Route::put('sua/{id}',[CustomerController::class,'postCustomerEdit'])->name('admin.postCustomerEdit');
         Route::delete('xoa/{id}',[CustomerController::class,'getCustomerDelete'])->name('admin.getCustomerDelete');
     });
-    Route::get('1', function () {
-        return view('admin.index');
-    })->name('lienhe');
+   
     Route::get('index', [PageController::class, 'IndexAdmin'])->name('admin.index');
 
-});
-
+})->middleware('auth');
+Route::get('lienhe', function () {
+    return view('lienhe');
+})->name('lienhe');
+Route::get('contact', function () {
+    return view('layouts.footer');
+})->name('contact');

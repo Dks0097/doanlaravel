@@ -19,7 +19,7 @@
     <div class="container-fluid px-4">
         <h1 class="mt-4">User</h1>
         <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item"><a href="{{route('admin.getCateList')}}">Admin</a></li>
+            <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Admin</a></li>
             <li class="breadcrumb-item active">user</li>
         </ol>
         <div class="card mb-4">
@@ -59,11 +59,11 @@
                                           <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Address: {{$item->address}}</li>
                                           <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Phone #: + {{$item->phone}}
                                             @if ($item->level == 1 )
-                                            <span class="badge badge-success">Admin</span>
+                                            <span class="badge badge-primary">Admin</span>
                                         @elseif($item->level == 2)
                                             <span class="badge badge-success">Kỹ thuật</span>
                                             @elseif($item->level == 3)
-                                            <span class="badge badge-success">Người dùng</span>
+                                            <span class="badge badge-info">Người dùng</span>
                                        
                                         @endif
                                         </li>

@@ -41,6 +41,41 @@
 				<div class="row">
 					<div class="col-sm-6">
 						<h4>Đặt hàng</h4>
+						@if (Auth::check())
+						<div class="space20">&nbsp;</div>
+
+						<div class="form-block">
+							<label for="name">Họ tên*</label>
+							<input type="text" name="name" id="name" value="{{Auth::user()->full_name}}" placeholder="Họ tên" required>
+						</div>
+						<div class="form-block">
+							<label>Giới tính </label>
+							<input id="gender" type="radio" class="input-radio" name="gender" value="nam" checked="checked" style="width: 10%"><span style="margin-right: 10%">Nam</span>
+							<input id="gender" type="radio" class="input-radio" name="gender" value="nữ" style="width: 10%"><span>Nữ</span>
+										
+						</div>
+
+						<div class="form-block">
+							<label for="email">Email*</label>
+							<input type="email" name="email" id="email" value="{{Auth::user()->email}}" required placeholder="expample@gmail.com">
+						</div>
+
+						<div class="form-block">
+							<label for="adress">Địa chỉ*</label>
+							<input type="text" id="adress" name="address" value="{{Auth::user()->address}}" placeholder="Street Address" required>
+						</div>
+						
+
+						<div class="form-block">
+							<label for="phone">Điện thoại*</label>
+							<input type="text" name="phone_number" value="{{Auth::user()->phone}}" id="phone" required>
+						</div>
+						
+						<div class="form-block">
+							<label for="notes">Ghi chú</label>
+							<textarea id="notes" name="note"></textarea>
+						</div>
+						@else
 						<div class="space20">&nbsp;</div>
 
 						<div class="form-block">
@@ -74,7 +109,10 @@
 							<label for="notes">Ghi chú</label>
 							<textarea id="notes" name="note"></textarea>
 						</div>
+						@endif
 					</div>
+					
+
 					<div class="col-sm-6">
 						<div class="your-order">
 							<div class="your-order-head"><h5>Đơn hàng của bạn</h5></div>
@@ -127,9 +165,9 @@
 										<label for="payment_method_cheque">Chuyển khoản </label>
 										<div class="payment_box payment_method_cheque" style="display: none;">
 											Chuyển tiền đến tài khoản sau:
-											<br>- Số tài khoản: 123 456 789
-											<br>- Chủ TK: Nguyễn A
-											<br>- Ngân hàng ACB, Chi nhánh TPHCM
+											<br>- Số tài khoản: 0865 710 154
+											<br>- Chủ TK: Nguyễn Phạm Quốc Dương
+											<br>- Ngân hàng MBBank, Chi nhánh TP ĐÀ NẴNG
 										</div>						
 									</li>
 									

@@ -42,7 +42,7 @@
                           
                           <div class="form-check form-check-inline">
                             <input class="form-check-input" name="level" type="radio"  id="inlineRadio1" value="1" {{$user->level=='1'?"checked":""}}>
-                            <label class="form-check-label" for="inlineRadio1"> <span class="badge badge-info">Admin </span></label>
+                            <label class="form-check-label" for="inlineRadio1"> <span class="badge badge-primary">Admin </span></label>
                           </div>
                           <div class="form-check form-check-inline">
                             <input class="form-check-input" name="level" type="radio"  id="inlineRadio2" value="2" {{$user->level=='2'?"checked":""}}>
@@ -53,7 +53,7 @@
                           <div class="form-check form-check-inline">
                             <input class="form-check-input" name="level" type="radio"  id="inlineRadio2" value="3" {{$user->level=='3'?"checked":""}}>
                             <label class="form-check-label" for="inlineRadio2">
-                              <span class="badge badge-success">người dùng</span>
+                              <span class="badge badge-info">người dùng</span>
                             </label>
                           </div>
                          
@@ -61,6 +61,7 @@
                       
                      
                         <button type="submit" class="btn btn-primary">Thêm vào</button>
+                        <a href="{{route('admin.getUserList')}}" class="btn btn-danger">Quay lại</a>
                 
             </div>
             

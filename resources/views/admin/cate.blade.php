@@ -15,7 +15,7 @@
     <div class="container-fluid px-4">
         <h1 class="mt-4">Danh mục</h1>
         <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item"><a href="{{route('admin.getCateList')}}">Admin</a></li>
+            <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Admin</a></li>
             <li class="breadcrumb-item active">Danh mục</li>
         </ol>
         <div class="card mb-4">
@@ -67,7 +67,7 @@
                             <td>{{$item->name }}</td>
                             <td>{{$item->description }}</td>
                            
-                            <td><img src="/source/image/product/{{$item->image }}" alt="{{$item->image }}" height="150" ></td>
+                            <td><img src="/source/image/product/{{$item->image }}" alt="{{$item->image }}" height="150" width="200" ></td>
                             <td>
                                 <a href="{{route('admin.getCateEdit',['id'=> $item->id ])}}" class="btn btn-success" >
                                     <i class="fas fa-edit"></i>

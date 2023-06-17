@@ -15,7 +15,7 @@
     <div class="container-fluid px-4">
         <h1 class="mt-4">Đơn hàng</h1>
         <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item"><a href="{{route('admin.getCateList')}}">Admin</a></li>
+            <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Admin</a></li>
             <li class="breadcrumb-item active">Đơn hàng</li>
         </ol>
         <div class="card mb-4">
@@ -81,7 +81,7 @@
                             </td>
                             <td>
                                 <div class="col md-3"><a href="{{route('admin.getBillEdit',['id'=> $item->id ])}}" class="btn btn-success"><i class="fas fa-edit"></i></a>
-                                    <form action="{{route('admin.getBillDelete',['id'=> $item->id ])}}" onclick="return confirm('bạn có muốn xóa {{$item->name}}');" method="post">
+                                    <form action="{{route('admin.getBillDelete',['id'=> $item->id ])}}" onclick="return confirm('bạn có muốn xóa đơn hàng {{$item->id}}');" method="post">
                      
                                         @csrf
                                         @method('DELETE')

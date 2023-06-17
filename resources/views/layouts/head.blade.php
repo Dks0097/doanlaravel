@@ -111,7 +111,7 @@
                             
                         </ul>
                     </li>
-                    <li><a href="about.html">Giới thiệu</a></li>
+                    <li><a href="{{route('contact')}}">Giới thiệu</a></li>
                     <li><a href="{{route('lienhe')}}">Liên hệ</a></li>
                 </ul>
                 <div class="clearfix"></div>

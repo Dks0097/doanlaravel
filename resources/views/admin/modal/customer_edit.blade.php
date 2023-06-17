@@ -60,6 +60,8 @@
                       
                      
                         <button type="submit" class="btn btn-primary">Thêm vào</button>
+                        <a href="{{route('admin.getCustomerList')}}" class="btn btn-danger">Quay lại</a>
+
                 
             </div>
             

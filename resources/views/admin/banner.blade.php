@@ -15,8 +15,8 @@
     <div class="container-fluid px-4">
         <h1 class="mt-4">Banner</h1>
         <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-            <li class="breadcrumb-item active">Tables</li>
+            <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Admin</a></li>
+            <li class="breadcrumb-item active">Banner</li>
         </ol>
         <div class="card mb-4">
             <div class="card-body">
@@ -64,7 +64,7 @@
                             <td>{{$item->link }}</td>
                           <td></td>
                            
-                            <td><img src="/source/image/slide//{{$item->image }}" alt="{{$item->image }}" height="150" ></td>
+                            <td><img src="/source/image/slide//{{$item->image }}" alt="{{$item->image }}" height="150" width="300" ></td>
                             <td><a href="{{route('admin.getBannerEdit',['id'=> $item->id ])}}" class="btn btn-success"><i class="fas fa-edit"></i></a></td>
                             <td><form action="{{route('admin.getBannerDelete',['id'=> $item->id ])}}" onclick="return confirm('bạn có muốn xóa banner {{$item->id}}');" method="post">
                      
@@ -92,4 +92,5 @@
 <script src="/source/assets/dest/js/scripts1.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
 <script src="/source/assets/dest/js/datatables-simple-demo.js"></script>
+
 @endsection

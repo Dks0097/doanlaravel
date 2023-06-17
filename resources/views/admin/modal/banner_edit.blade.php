@@ -34,7 +34,7 @@
               @enderror
                         <button type="submit" class="btn btn-primary">Thêm vào</button>
                 
-            </div>
+            
             
             <!-- Modal footer -->
            
