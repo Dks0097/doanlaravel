@@ -76,7 +76,9 @@
                 @error('image')
                   <div class="alert alert-danger">{{ $message }}</div>
               @enderror
-                        <button type="submit" class="btn btn-primary">Thêm vào</button>
+              <button type="submit" class="btn btn-primary"><i class="fa fa-save" aria-hidden="true"></i> Lưa lại</button>
+              <a href="{{route('admin.getProductList')}}" class="btn btn-danger">Quay lại</a>
+
                 
            
             

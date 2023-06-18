@@ -8,6 +8,8 @@
 <link href="/source/assets/dest/css/styles1.css" rel="stylesheet" />
 <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
 
 @endsection
 @section('content')
@@ -63,7 +65,9 @@
                         </div>
                       
                      
-                        <button type="submit" class="btn btn-primary">Thêm vào</button>
+                        <button type="submit" class="btn btn-primary"><i class="fa fa-save" aria-hidden="true"></i> Lưa lại</button>
+                        <a href="{{route('admin.getBillList')}}" class="btn btn-danger">Quay lại</a>
+
                 
             </div>
             

@@ -60,7 +60,8 @@
                         </div>
                       
                      
-                        <button type="submit" class="btn btn-primary">Thêm vào</button>
+                        <button type="submit" class="btn btn-primary"><i class="fa fa-save" aria-hidden="true"></i> Lưa lại</button>
+
                         <a href="{{route('admin.getUserList')}}" class="btn btn-danger">Quay lại</a>
                 
             </div>
