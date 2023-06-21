@@ -49,7 +49,7 @@ class PageController extends Controller
         $bill->date_order=date('Y-m-d');
         $bill->total=$cart->totalPrice;
         $bill->payment=$request->input('payment_method');
-        $bill->note=$request->input('notes');
+        $bill->note=$request->input('note');
         $bill->status = 0;
         $bill->save();
 

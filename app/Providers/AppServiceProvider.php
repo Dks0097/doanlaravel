@@ -48,7 +48,7 @@ class AppServiceProvider extends ServiceProvider
                 $oldFavourite=Session::get('favourite'); //session cart được tạo trong method addToCart của PageController
                 $favourite=new Favourite($oldFavourite);
                 $view->with(['favourite'=>Session::get('favourite'),'productFavourites'=>$favourite->items,
-                'totalPrice'=>$favourite->totalPrice,'totalQty'=>$favourite->totalQty]);
+                ]);
             };
         });
     }

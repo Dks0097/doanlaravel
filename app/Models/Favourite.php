@@ -9,14 +9,14 @@ class Favourite extends Model
 {
     use HasFactory;
     public $items = null;
-	public $totalQty = 0;
-	public $totalPrice = 0;
+	// public $totalQty = 0;
+	// public $totalPrice = 0;
 
 	public function __construct($oldFavourite){
 		if($oldFavourite){
 			$this->items = $oldFavourite->items;
-			$this->totalQty = $oldFavourite->totalQty;
-			$this->totalPrice = $oldFavourite->totalPrice;
+			// $this->totalQty = $oldFavourite->totalQty;
+			// $this->totalPrice = $oldFavourite->totalPrice;
 		}
 	}
 
@@ -36,11 +36,11 @@ class Favourite extends Model
 		$favourite['qty']++;
         if ($item->promotion_price != 0) {
             $favourite['price'] = $item->promotion_price * $favourite['qty'];
-            $this->totalPrice += $item->promotion_price;
+            // $this->totalPrice += $item->promotion_price;
         }
         else {
             $favourite['price'] = $item->unit_price * $favourite['qty'];
-            $this->totalPrice += $item->unit_price;
+            // $this->totalPrice += $item->unit_price;
         }
 		
 		$this->items[$id] = $favourite;
@@ -51,16 +51,16 @@ class Favourite extends Model
 	public function reduceByOne($id){
 		$this->items[$id]['qty'];
 		$this->items[$id]['price'] -= $this->items[$id]['item']['price'];
-		$this->totalQty--;
-		$this->totalPrice -= $this->items[$id]['item']['price'];
+		// $this->totalQty--;
+		// $this->totalPrice -= $this->items[$id]['item']['price'];
 		if($this->items[$id]['qty']<=0){
 			unset($this->items[$id]);
 		}
 	}
 	//xóa nhiều
 	public function removeItem($id){
-		$this->totalQty -= $this->items[$id]['qty'];
-		$this->totalPrice -= $this->items[$id]['price'];
+		// $this->totalQty -= $this->items[$id]['qty'];
+		// $this->totalPrice -= $this->items[$id]['price'];
 		unset($this->items[$id]);
 	}
 }

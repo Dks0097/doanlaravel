@@ -157,17 +157,9 @@
 
             <div class="cart-totals pull-right">
                 <div class="cart-totals-row"><h5 class="cart-total-title">Cart Totals</h5></div>
-                <div class="cart-totals-row"><span>Cart Subtotal:</span> <span> @if (isset($totalPrice))
-                    {{$totalPrice}}
-                    @else
-                        0
-                    @endif</span></div>
+                <div class="cart-totals-row"><span>Cart Subtotal:</span> <span>  {{isset($totalPrice)?number_format($totalPrice):0}}</span></div>
                 <div class="cart-totals-row"><span>Shipping:</span> <span>Free Shipping</span></div>
-                <div class="cart-totals-row"><span>Order Total:</span> <span> @if (isset($totalPrice))
-                    {{$totalPrice}}
-                    @else
-                        0
-                    @endif</span></div>
+                <div class="cart-totals-row"><span>Order Total:</span> <span>  {{isset($totalPrice)?number_format($totalPrice):0}}</span></div>
             </div>
 
             <div class="clearfix"></div>
