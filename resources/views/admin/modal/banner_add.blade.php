@@ -39,7 +39,9 @@
                   
                   <div class="form-group">
                       <label for="exampleFormControlFile1">Hình ảnh</label>
-                      <input name="image" type="file" class="form-control-file" id="exampleFormControlFile1">
+                      <img src="" alt="" id="img" height="200" width="" style="padding: 20px">
+
+                      <input name="image" type="file" class="form-control-file" id="input">
                     </div>
                     @error('image')
                       <div class="alert alert-danger">{{ $message }}</div>
@@ -57,6 +59,15 @@
             </div>
           </div>
       </form>
+      <script>
+        let img = document.getElementById('img');
+        let input = document.getElementById('input');
+
+        input.onchange = (e) => {
+            if (input.files[0])
+            img.src = URL.createObjectURL(input.files[0]);
+        };
+     </script> 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -102,6 +102,8 @@ body {
   background-color: var(--bs-body-bg);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  align-items: center;
+  justify-content: center;
 }
 
 hr {
@@ -347,7 +349,15 @@ button {
 button:focus:not(:focus-visible) {
   outline: 0;
 }
-
+input {
+  font-size: 1.5rem;
+  /* text-align: center; */
+  padding: 1rem;
+  background-color: #c4cddf;
+  border-radius: 1rem;
+  font-family: "Open Sans", sans-serif;
+  margin-top: 1rem;
+}
 input,
 button,
 select,

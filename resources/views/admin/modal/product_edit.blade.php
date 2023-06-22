@@ -70,8 +70,8 @@
               
               <div class="form-group">
                   <label for="exampleFormControlFile1">Hình ảnh</label>
-                  <img src="/source/image/product/{{$product->image}}" alt="{{$product->image}}">
-                  <input name="image" type="file" class="form-control-file" id="exampleFormControlFile1" value="{{ isset($product)?$product->image: "" }}">
+                  <img src="/source/image/product/{{$product->image}}" alt="{{$product->image}}" height="200" width="" id="img" style="padding: 20px;">
+                  <input name="image" type="file" class="form-control-file" id="input" value="{{ isset($product)?$product->image: "" }}" style=" ">
                 </div>
                 @error('image')
                   <div class="alert alert-danger">{{ $message }}</div>
@@ -86,4 +86,13 @@
            
          
   </form>
+  <script>
+    let img = document.getElementById('img');
+    let input = document.getElementById('input');
+
+    input.onchange = (e) => {
+        if (input.files[0])
+        img.src = URL.createObjectURL(input.files[0]);
+    };
+ </script> 
 @endsection

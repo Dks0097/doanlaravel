@@ -66,9 +66,7 @@
                                         </li>
                                         </ul>
                                       </div>
-                                      <div class="col-5 text-center">
-                                        <img src="/source/image/avatar/{{$item->avatar}}" alt="user-avatar" class="img-circle img-fluid">
-                                      </div>
+                                     
                                     </div>
                                   </div>
                                   <div class="card-footer">

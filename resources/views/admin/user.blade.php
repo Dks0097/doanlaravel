@@ -69,9 +69,7 @@
                                         </li>
                                         </ul>
                                       </div>
-                                      <div class="col-5 text-center">
-                                        <img src="/source/image/avatar/{{$item->avatar}}" alt="user-avatar" class="img-circle img-fluid">
-                                      </div>
+                                   
                                     </div>
                                   </div>
                                   <div class="card-footer">
@@ -86,10 +84,10 @@
                                     </div>
                                     <form action="{{route('admin.getUserDelete',['id'=> $item->id ])}}" onclick="return confirm('bạn có muốn xóa {{$item->full_name}}!');" method="post">
                      
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i> </button>
-                                      </form> 
+                                      @csrf
+                                      @method('DELETE')
+                                      <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i> </button>
+                                    </form> 
                                   </div>
                                 </div>
                               </div>
