@@ -72,7 +72,7 @@
                     <div class="beta-products-list">
                         <h4>New Products</h4>
                         <div class="beta-products-details">
-                            <p class="pull-left">438 styles found</p>
+                            <p class="pull-left">{{count($new_products)}} sản phẩm</p>
                             <div class="clearfix"></div>
                         </div>
 
@@ -116,7 +116,7 @@
                                     <ul class="nav nav-pills nav-justified">
                                        
                                         <li><a href="{{route('banhang.addToFavourite',['id'=>$item->id])}}"><i class="fa fa-plus-square"></i>Yêu thích</a></li>
-                                        <li><a href="#"><i class="fa fa-plus-square"></i>So sánh</a></li>
+                                       
                                     </ul>
                                 </div>
                             </div>
@@ -133,7 +133,7 @@
                     <div class="beta-products-list">
                         <h4>Top Products</h4>
                         <div class="beta-products-details">
-                            <p class="pull-left">438 styles found</p>
+                            <p class="pull-left">{{count($best_product)}} sản phẩm</p>
                             <div class="clearfix"></div>
                         </div>
                         @php
@@ -175,7 +175,7 @@
                                     </div>
                                     <ul class="nav nav-pills nav-justified">
                                         <li><a href="{{route('banhang.addToFavourite',['id'=>$item->id])}}"><i class="fa fa-plus-square"></i>Yêu thích</a></li>
-                                        <li><a href="#"><i class="fa fa-plus-square"></i>So sánh</a></li>
+                                       
                                     </ul>
                                 </div>
                             </div>
@@ -191,9 +191,9 @@
                     </div> <!-- .beta-products-list -->
                 </div>
             </div> <!-- end section with sidebar and main content -->
-            <center><div class="">
+            {{-- <center><div class="">
                 {{$products->appends(request()->all())->links()}}
-              </div></center>
+              </div></center> --}}
 
         </div> <!-- .main-content -->
     </div> <!-- #content -->

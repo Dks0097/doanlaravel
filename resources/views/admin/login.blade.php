@@ -51,7 +51,7 @@
 @enderror
                     <div class="form-block">
                         <label for="phone">Password*</label>
-                        <input name="password" type="text" id="password" required>
+                        <input name="password" type="password" class="form-control" id="pwd" required>
                     </div>
                     @error('password')
     <div class="alert alert-danger">{{ $message }}</div>

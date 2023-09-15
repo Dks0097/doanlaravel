@@ -102,7 +102,7 @@
                                             </div>
                                             <ul class="nav nav-pills nav-justified">
                                                 <li><a href="{{route('banhang.addToFavourite',['id'=>$item->id])}}"><i class="fa fa-plus-square"></i>Yêu thích</a></li>
-                                                <li><a href="#"><i class="fa fa-plus-square"></i>So sánh</a></li>
+                                                
                                             </ul>
                                         </div>
                                     </div>
@@ -190,7 +190,7 @@
                                             </div>
                                             <ul class="nav nav-pills nav-justified">
                                                 <li><a href="{{route('banhang.addToFavourite',['id'=>$product->id])}}"><i class="fa fa-plus-square"></i>Yêu thích</a></li>
-                                                <li><a href="#"><i class="fa fa-plus-square"></i>So sánh</a></li>
+                                                
                                             </ul>
                                         </div>
                                     </div>
