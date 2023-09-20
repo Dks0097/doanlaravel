@@ -22,6 +22,8 @@ class Product extends Model
             })
             ->orwhere('description','like', '%' . $key . '%')
             ->orWhere('name', 'LIKE', '%'.$key.'%')
+            ->orWhere('unit_price', 'LIKE', '%'.$key.'%')
+            ->orWhere('promotion_price', 'LIKE', '%'.$key.'%')
             // ->orderBy('name',$name)
             // ->orderBy('unit_price',$gia)
             ;
