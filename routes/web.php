@@ -21,7 +21,9 @@ use PhpParser\Node\Name;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/input-email',[PageController::class,'getinputEmail'])->name('getinputEmail');
 
+Route::post('/input-email',[PageController::class,'postinputEmail'])->name('postinputEmail');
 // Route::get('/', function () {
 //     return view('welcome');
 // });

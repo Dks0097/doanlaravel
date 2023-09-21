@@ -59,6 +59,9 @@
                     <div class="form-block">
                         <button type="submit" class="btn btn-primary">Login</button>
                     </div>
+                    <div>
+                        <a href="{{route('getinputEmail')}}">quên mật khẩu</a>
+                    </div>
                 </div>
                 <div class="col-sm-3"></div>
             </div>
