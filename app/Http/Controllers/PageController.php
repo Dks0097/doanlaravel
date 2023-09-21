@@ -12,6 +12,7 @@ use App\Models\Slide;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
@@ -27,20 +28,26 @@ class PageController extends Controller
 
         // kiểm tra có user có email như vậy không
         $user=User::where('email',$email)->get();
-        //dd($user);
+        // dd($user);
         if($user->count()!=0){
             // gửi mật khẩu reset tới email
+            $matkhaumoi = substr( md5( rand (0,999999)), 0, 8); 
             $sentData = [
                 'title' => 'Mật khẩu mới của bạn là:',
-                'body' => '123456'
+                'body' => $matkhaumoi,
             ];
-            Mail::to($req->user())->cc("phucthinh031199.dn@gmail.com")->bcc("trantrieuvinh0@gmail.com")->send(new SendMail($sentData));
+            DB::table('users')->where('email',$email)->update([
+                'password' =>   Hash::make($matkhaumoi) ,
+                
+               
+            ]);
+            Mail::to($req->user())->cc($email)->bcc($email)->send(new SendMail($sentData));
             Session::flash('message', 'Send email successfully!');
 
             return redirect()->route('getinputEmail'); //về lại trang đăng nhập của khách
         }
         else {
-              return redirect()->route('getinputEmail')->with('message','Your email is not right');
+              return redirect()->route('getinputEmail')->with('message','email không tồn tại');
         }
     }//hết postInputEmail
 
