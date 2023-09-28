@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactMail;
 use App\Mail\SendMail;
 use App\Models\Bill;
 use App\Models\BillDetail;
 use App\Models\Cart;
 use App\Models\Customer;
+use App\Models\Email;
 use App\Models\Favourite;
 use App\Models\Slide;
 use App\Models\User;
@@ -229,6 +231,35 @@ class PageController extends Controller
         $bills = Bill::where('status' ,'=','0')->get();
         $customer = Customer::all();
         return view('admin.index', compact('products', 'users', 'bills', 'customer'));
+    }
+    public function getlienhe()
+    {
+        
+        return view('lienhe');
+    }
+    public function postlienhe(Request $request)
+    {
+        $name = $request->input('name');
+        $email = $request->input('email');
+        $content = $request->input('message');
+        $subject = $request->input('subject');
+
+        // Tạo một đối tượng UserMail với dữ liệu trên
+        $userMail = new ContactMail($name, $email, $content, $subject);
+
+        // Gửi email đến người quản lý web với địa chỉ là admin@web.com
+        Mail::to('duongnguyen3412@gmail.com')->send($userMail);
+        $emails = new Email();
+        $emails->name = $name;
+        $emails->subject = $subject;
+        $emails->message = $content;
+        $emails->email = $email;
+        $emails->status = 1;
+        
+        $emails->save();
+        Session::flash('message', 'Gửi email thành công !');
+        // Trả về một thông báo thành công
+        return redirect()->route('getlienhe');
     }
 
    

@@ -4,6 +4,7 @@ use App\Http\Controllers\BannerController;
 use App\Http\Controllers\BillController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\EmailController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\UserController;
 use Illuminate\Routing\Controllers\Middleware;
@@ -102,6 +103,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'adminLogin'], function () {
         Route::put('sua/{id}',[UserController::class,'postUserEdit'])->name('admin.postUserEdit');
         Route::delete('xoa/{id}',[UserController::class,'getUserDelete'])->name('admin.getUserDelete');
     });
+    Route::group(['prefix' => 'email'], function () {
+        Route::get('danhsach', [EmailController::class, 'index'])->name('admin.getEmailList');
+        Route::get('sua/{id}',[EmailController::class,'getEmailEdit'])->name('admin.getEmailEdit');
+        Route::put('sua/{id}',[EmailController::class,'postEmailEdit'])->name('admin.postEmailEdit');
+        Route::delete('xoa/{id}',[EmailController::class,'getEmailDelete'])->name('admin.getEmailDelete');
+    });
     Route::group(['prefix' => 'customer'], function () {
         Route::get('danhsach', [CustomerController::class, 'index'])->name('admin.getCustomerList');
         Route::get('sua/{id}',[CustomerController::class,'getCustomerEdit'])->name('admin.getCustomerEdit');
@@ -112,9 +119,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'adminLogin'], function () {
     Route::get('index', [PageController::class, 'IndexAdmin'])->name('admin.index');
 
 })->middleware('auth');
-Route::get('lienhe', function () {
-    return view('lienhe');
-})->name('lienhe');
+Route::get('/lienhe', [PageController::class, 'getlienhe'])->name('getlienhe');
+
+Route::post('/lienhe', [PageController::class, 'postlienhe'])->name('postlienhe');
 Route::get('contact', function () {
     return view('layouts.footer');
 })->name('contact');

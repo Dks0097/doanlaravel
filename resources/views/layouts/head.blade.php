@@ -112,7 +112,7 @@
                         </ul>
                     </li>
                     <li><a href="{{route('contact')}}">Giới thiệu</a></li>
-                    <li><a href="{{route('lienhe')}}">Liên hệ</a></li>
+                    <li><a href="{{route('getlienhe')}}">Liên hệ</a></li>
                 </ul>
                 <div class="clearfix"></div>
             </nav>

@@ -19,7 +19,11 @@
     
         ></iframe></div>
 </div>
-
+@if (session('message'))
+<div class="alert alert-success">
+    {{ session('message') }}
+</div>
+@endif
 
 <div class="container">
     <div id="content" class="space-top-none">
@@ -35,32 +39,32 @@
                     @csrf
                     @if (Auth::check())
                     <div class="form-block">
-                        <input name="your-name" type="text" value="{{Auth::user()->full_name}}" placeholder="Your Name (required)">
+                        <input name="name" type="text" value="{{Auth::user()->full_name}}" placeholder="Your Name (required)">
                     </div>
                     <div class="form-block">
-                        <input name="your-email" type="email" value="{{Auth::user()->email}}" placeholder="Your Email (required)">
+                        <input name="email" type="email" value="{{Auth::user()->email}}" placeholder="Your Email (required)">
                     </div>
                     <div class="form-block">
-                        <input name="your-subject" type="text" placeholder="Subject">
+                        <input name="subject" type="text" placeholder="Subject">
                     </div>
                     <div class="form-block">
-                        <textarea name="your-message" placeholder="Your Message"></textarea>
+                        <textarea name="message" placeholder="Your Message"></textarea>
                     </div>
                     <div class="form-block">
                         <button type="submit" class="beta-btn primary">Send Message <i class="fa fa-chevron-right"></i></button>
                     </div>
                     @else
                     <div class="form-block">
-                        <input name="your-name" type="text" placeholder="Your Name (required)">
+                        <input name="name" type="text" placeholder="Your Name (required)">
                     </div>
                     <div class="form-block">
-                        <input name="your-email" type="email" placeholder="Your Email (required)">
+                        <input name="email" type="email" placeholder="Your Email (required)">
                     </div>
                     <div class="form-block">
-                        <input name="your-subject" type="text" placeholder="Subject">
+                        <input name="subject" type="text" placeholder="Subject">
                     </div>
                     <div class="form-block">
-                        <textarea name="your-message" placeholder="Your Message"></textarea>
+                        <textarea name="message" placeholder="Your Message"></textarea>
                     </div>
                     <div class="form-block">
                         <button type="submit" class="beta-btn primary">Send Message <i class="fa fa-chevron-right"></i></button>
